@@ -1,0 +1,13 @@
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\bin\Debug\Axon-Login-Core.exe.config
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\bin\Debug\Axon-Login-Core.exe
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\bin\Debug\Axon-Login-Core.pdb
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\bin\Debug\MaterialSkin.dll
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon-Login-Core.csproj.AssemblyReference.cache
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon_Login_Core.Form1.resources
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon_Login_Core.Properties.Resources.resources
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon-Login-Core.csproj.GenerateResource.cache
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon-Login-Core.csproj.CoreCompileInputs.cache
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon-Login-Core.csproj.CopyComplete
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon-Login-Core.exe
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon-Login-Core.pdb
+C:\Users\Tickl\source\repos\Axon-Login-Core\Axon-Login-Core\obj\Debug\Axon_Login_Core.Form2.resources

@@ -39,6 +39,7 @@
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialSingleLineTextField4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // materialListView1
@@ -114,8 +115,8 @@
             // materialSingleLineTextField1
             // 
             this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(1073, 132);
+            this.materialSingleLineTextField1.Hint = "Name";
+            this.materialSingleLineTextField1.Location = new System.Drawing.Point(1077, 158);
             this.materialSingleLineTextField1.MaxLength = 32767;
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
@@ -126,15 +127,14 @@
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(215, 23);
             this.materialSingleLineTextField1.TabIndex = 3;
             this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.Text = "Name";
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             this.materialSingleLineTextField1.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // materialSingleLineTextField2
             // 
             this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(1073, 174);
+            this.materialSingleLineTextField2.Hint = "Address";
+            this.materialSingleLineTextField2.Location = new System.Drawing.Point(1077, 200);
             this.materialSingleLineTextField2.MaxLength = 32767;
             this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
@@ -145,15 +145,14 @@
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(215, 23);
             this.materialSingleLineTextField2.TabIndex = 4;
             this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.Text = "Address";
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             this.materialSingleLineTextField2.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
             // 
             // materialSingleLineTextField3
             // 
             this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(1073, 217);
+            this.materialSingleLineTextField3.Hint = "Phone Number";
+            this.materialSingleLineTextField3.Location = new System.Drawing.Point(1077, 243);
             this.materialSingleLineTextField3.MaxLength = 32767;
             this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
@@ -164,7 +163,6 @@
             this.materialSingleLineTextField3.Size = new System.Drawing.Size(215, 23);
             this.materialSingleLineTextField3.TabIndex = 5;
             this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.Text = "Phone Number";
             this.materialSingleLineTextField3.UseSystemPasswordChar = false;
             this.materialSingleLineTextField3.Click += new System.EventHandler(this.materialSingleLineTextField3_Click);
             // 
@@ -185,11 +183,29 @@
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
+            // materialSingleLineTextField4
+            // 
+            this.materialSingleLineTextField4.Depth = 0;
+            this.materialSingleLineTextField4.Hint = "Customer ID";
+            this.materialSingleLineTextField4.Location = new System.Drawing.Point(1077, 115);
+            this.materialSingleLineTextField4.MaxLength = 32767;
+            this.materialSingleLineTextField4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField4.Name = "materialSingleLineTextField4";
+            this.materialSingleLineTextField4.PasswordChar = '\0';
+            this.materialSingleLineTextField4.SelectedText = "";
+            this.materialSingleLineTextField4.SelectionLength = 0;
+            this.materialSingleLineTextField4.SelectionStart = 0;
+            this.materialSingleLineTextField4.Size = new System.Drawing.Size(215, 23);
+            this.materialSingleLineTextField4.TabIndex = 7;
+            this.materialSingleLineTextField4.TabStop = false;
+            this.materialSingleLineTextField4.UseSystemPasswordChar = false;
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1321, 375);
+            this.Controls.Add(this.materialSingleLineTextField4);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialSingleLineTextField3);
             this.Controls.Add(this.materialSingleLineTextField2);
@@ -197,7 +213,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.materialListView1);
-         //   this.Name = "Customer";
+          //  this.Name = "Customer";
             this.Text = "Customers";
             this.Load += new System.EventHandler(this.Customer_Load);
             this.ResumeLayout(false);
@@ -221,5 +237,6 @@
 
         private System.Windows.Forms.ImageList imlSmallIcons;
         private System.Windows.Forms.ImageList imlLargeIcons;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField4;
     }
 }

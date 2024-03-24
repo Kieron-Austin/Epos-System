@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using MySql.Data.MySqlClient;
 namespace Motapart_Core
 {
     [StructLayout(LayoutKind.Sequential)]
@@ -23,7 +24,8 @@ namespace Motapart_Core
         public int stocklevel;
         public string supplier;
         public string price;
-        public Byte[] image;
+        public string costprice;
+        public byte[] image;
         public int warninglevel;
     }
 

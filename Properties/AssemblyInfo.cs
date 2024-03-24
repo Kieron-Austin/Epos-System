@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Axon-Login-Core")]
+[assembly: AssemblyTitle("Motapart")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Axon-Login-Core")]
+[assembly: AssemblyCompany("Kieron Austin-Taynton")]
+[assembly: AssemblyProduct("Motapart")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -22,7 +22,17 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("904d09e6-9740-4ffc-84dc-39d08437be48")]
 
-// Version information for an assembly consists of the following four values:
+// Version i
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// rmation for an assembly consists of the following four values:
 //
 //      Major Version
 //      Minor Version

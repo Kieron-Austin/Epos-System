@@ -15,6 +15,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using NAudio.Wave;
+using System.Net.Http;
 
 namespace Motapart_Core
 {
@@ -26,12 +28,12 @@ namespace Motapart_Core
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Red700, Primary.Red700,
-                Primary.Red700, Accent.Red700,
-                TextShade.BLACK
+                Primary.Purple100, Primary.Purple100,
+                Primary.Purple100, Accent.Purple100,
+                TextShade.WHITE
             );
 
         }
@@ -49,6 +51,10 @@ namespace Motapart_Core
                 return ms.ToArray();
             }
         }
+
+       
+
+       
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             try
@@ -73,9 +79,9 @@ namespace Motapart_Core
             materialListView1.Items.Clear();
 
             List<StockData> list = new List<StockData>();
-            MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
-            connection.Open();
-            MySqlDataReader reader = new MySqlCommand("SELECT * FROM `stock`;", connection).ExecuteReader();
+            MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
+            conn.Open();
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM `stock`;", conn).ExecuteReader();
             try
             {
                 while (reader.Read())
@@ -110,6 +116,11 @@ namespace Motapart_Core
                         item.warninglevel = (int)reader["WarningLevel"];
                     else
                         item.warninglevel = 0;
+
+                    if (!reader.IsDBNull(reader.GetOrdinal("CostPrice")))
+                        item.costprice = (string)reader["CostPrice"];
+                    else
+                        item.costprice = "";
 
                     if (!reader.IsDBNull(reader.GetOrdinal("Image")))
                         item.image = (Byte[])reader["Image"];
@@ -177,10 +188,11 @@ namespace Motapart_Core
 
                 if (user.stocklevel <= user.warninglevel)
                 {
-                    string Message = user.name.ToString() + "Is Critically Low In Stock Only " + user.stocklevel.ToString() + " Remaining";
+                    string Message = user.name.ToString() + " Is Critically Low In Stock Only " + user.stocklevel.ToString() + " Remaining";
+                    Text_To_Speech.SpeechToMe(Message);
                     MessageBox.Show(Message, "Stock Low", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     lvi.SubItems.Add(user.stocklevel.ToString());
+                   
                 }
                 else
                 {
@@ -189,6 +201,7 @@ namespace Motapart_Core
 
                 lvi.SubItems.Add(user.supplier.ToString());
                 lvi.SubItems.Add("£" + user.price.ToString());
+                lvi.SubItems.Add("£" + user.costprice.ToString());
                 lvi.SubItems.Add(user.warninglevel.ToString());
                 materialListView1.Items.Add(lvi);
             }
@@ -204,7 +217,7 @@ namespace Motapart_Core
             MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
             conn.Open();
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO stock(Barcode, Name, StockLevel, Supplier, Image, Price, WarningLevel) VALUES('" + ToInt(materialSingleLineTextField1.Text) + "','" + materialSingleLineTextField2.Text.ToString() + "','" + ToInt(materialSingleLineTextField3.Text) + "','" + materialSingleLineTextField4.Text.ToString() + "','" + imageToByte(SelectedImage) + "','" + materialSingleLineTextField6.Text.ToString() + "','" + ToInt(materialSingleLineTextField5.Text) + "')";
+            comm.CommandText = "INSERT INTO stock(Barcode, Name, StockLevel, Supplier, Image, Price, WarningLevel, CostPrice) VALUES('" + ToInt(materialSingleLineTextField1.Text) + "','" + materialSingleLineTextField2.Text.ToString() + "','" + ToInt(materialSingleLineTextField3.Text) + "','" + materialSingleLineTextField4.Text.ToString() + "','" + imageToByte(SelectedImage) + "','" + materialSingleLineTextField6.Text.ToString() + "','" + ToInt(materialSingleLineTextField5.Text) + "','" + materialSingleLineTextField7.Text.ToString() + "')";
             comm.ExecuteNonQuery();
             conn.Close();
             ListStockItems();
@@ -259,5 +272,22 @@ namespace Motapart_Core
         {
 
         }
+
+        private void materialSingleLineTextField7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialSingleLineTextField8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

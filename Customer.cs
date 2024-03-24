@@ -42,9 +42,9 @@ namespace Motapart_Core
             materialListView1.Items.Clear();
 
             List<CustomerData> list = new List<CustomerData>();
-            MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
-            connection.Open();
-            MySqlDataReader reader = new MySqlCommand("SELECT * FROM `customers`;", connection).ExecuteReader();
+            MySqlConnection conn = new MySqlConnection("datasource=excalibur2.site.nfoservers.com;port=3306;username=excalibur2;password=AvS2HZsTcb;database=excalibur2_motapart;");
+            conn.Open();
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM `customers`;", conn).ExecuteReader();
             try
             {
                 while (reader.Read())
@@ -105,7 +105,7 @@ namespace Motapart_Core
         {
             Random CustomerIDGenerator = new Random();
             int RandomCustomerID = CustomerIDGenerator.Next(0, 999999999);
-            MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
+            MySqlConnection conn = new MySqlConnection("datasource=excalibur2.site.nfoservers.com;port=3306;username=excalibur2;password=AvS2HZsTcb;database=excalibur2_motapart;");
             conn.Open();
             MySqlCommand comm = conn.CreateCommand();
             comm.CommandText = "INSERT INTO customers(Customer_ID, Name, Number, Address) VALUES('" + RandomCustomerID.ToString() + "','" + materialSingleLineTextField1.Text.ToString() + "','" + materialSingleLineTextField2.Text.ToString() + "','" + materialSingleLineTextField3.Text.ToString() + "')";

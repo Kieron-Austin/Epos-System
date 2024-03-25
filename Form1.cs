@@ -133,52 +133,42 @@ namespace Motapart_Core
                 }
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             ListStockItems();
         }
-
         private void materialSingleLineTextField2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             new Customer().Show();
             Hide();
         }
-
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-
         private void materialLabel3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
         
         }
-
         private void materialFlatButton2_Click_1(object sender, EventArgs e)
         {
             new Customer().Show();
         }
-
         private void materialFlatButton1_Click_1(object sender, EventArgs e)
         {
             new Add_Item().Show();
-           // Hide();
         }
         private void ListStockItems()
         {
@@ -187,7 +177,6 @@ namespace Motapart_Core
             {
                 StockData user = users[i];
                 ListViewItem lvi = new ListViewItem();
-
                 lvi.Text = user.barcode.ToString();
                 lvi.SubItems.Add(user.name.ToString());
                 lvi.SubItems.Add(user.stocklevel.ToString());
@@ -198,25 +187,22 @@ namespace Motapart_Core
                 materialListView1.Items.Add(lvi);
             }
         }
-
         private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void materialSingleLineTextField1_Click(object sender, EventArgs e)
         {
+
         }
- 
         private void materialListView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-        }
 
+        }
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(materialSingleLineTextField1.Text))
@@ -229,10 +215,19 @@ namespace Motapart_Core
                 listsearch();
             }
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialFlatButton4_Click(object sender, EventArgs e)
+        {
+            new Sale().Show();
+        }
+
+        private void materialFlatButton5_Click(object sender, EventArgs e)
+        {
+            new Discount().Show();
         }
     }
 }

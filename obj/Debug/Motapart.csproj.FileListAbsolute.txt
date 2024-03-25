@@ -63,3 +63,5 @@ C:\Users\Tickl\source\repos\Motapart\Motapart\bin\Debug\NAudio.WinForms.xml
 C:\Users\Tickl\source\repos\Motapart\Motapart\bin\Debug\NAudio.WinMM.xml
 C:\Users\Tickl\source\repos\Motapart\Motapart\bin\Debug\System.Security.AccessControl.xml
 C:\Users\Tickl\source\repos\Motapart\Motapart\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Tickl\source\repos\Motapart\Motapart\obj\Debug\Motapart_Core.Sale.resources
+C:\Users\Tickl\source\repos\Motapart\Motapart\obj\Debug\Motapart_Core.Discount.resources

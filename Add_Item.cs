@@ -144,18 +144,13 @@ namespace Motapart_Core
             }
             return list;
         }
-
-
- 
-
         private void ListStockItems()
         {
             List<StockData> users = RetreieveStock();
             for (int i = 0; i < users.Count; i++)
             {
                 StockData user = users[i];
-                ListViewItem lvi = new ListViewItem();
-              
+                ListViewItem lvi = new ListViewItem();       
                 lvi.Text = user.barcode.ToString();
                 lvi.SubItems.Add(user.name.ToString());
 
@@ -165,13 +160,11 @@ namespace Motapart_Core
                     Text_To_Speech.SpeechToMe(Message);
                     MessageBox.Show(Message, "Stock Low", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     lvi.SubItems.Add(user.stocklevel.ToString());
-                   
                 }
                 else
                 {
                     lvi.SubItems.Add(user.stocklevel.ToString());
                 }
-
                 lvi.SubItems.Add(user.supplier.ToString());
                 lvi.SubItems.Add("£" + user.price.ToString());
                 lvi.SubItems.Add("£" + user.costprice.ToString());
@@ -200,67 +193,53 @@ namespace Motapart_Core
         {
 
         }
-
         private void materialSingleLineTextField1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialSingleLineTextField2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialSingleLineTextField3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             AddStock();
         }
-
         private void materialSingleLineTextField4_Click(object sender, EventArgs e)
         {
 
         }
-
         private void lvwBooks_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void materialSingleLineTextField5_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialSingleLineTextField5_Click_1(object sender, EventArgs e)
         {
 
         }
-
         private void materialSingleLineTextField7_Click(object sender, EventArgs e)
         {
 
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void materialSingleLineTextField8_Click(object sender, EventArgs e)
         {
 
         }
-
-       
     }
 }

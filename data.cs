@@ -15,6 +15,7 @@ namespace Motapart_Core
         public string name;
         public string address;
         public string number;
+        public string image;
     }
 
     public struct StockData

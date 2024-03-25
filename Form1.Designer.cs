@@ -192,14 +192,14 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1541, 600);
+            this.ClientSize = new System.Drawing.Size(1371, 600);
             this.Controls.Add(this.materialFlatButton3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialSingleLineTextField1);
             this.Controls.Add(this.materialListView1);
             this.Controls.Add(this.materialFlatButton1);
             this.Controls.Add(this.materialFlatButton2);
-       //     this.Name = "Form1";
+          //  this.Name = "Form1";
             this.Text = "Motapart Sales & Invoicing";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);

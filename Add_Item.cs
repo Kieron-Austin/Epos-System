@@ -79,7 +79,7 @@ namespace Motapart_Core
             materialListView1.Items.Clear();
 
             List<StockData> list = new List<StockData>();
-            MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
+            MySqlConnection conn = new MySqlConnection("datasource=192.168.1.132;port=3306;username=root;password=;database=new_motapart;");
             conn.Open();
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM `stock`;", conn).ExecuteReader();
             try
@@ -214,7 +214,7 @@ namespace Motapart_Core
         {
             Random CustomerIDGenerator = new Random();
             int RandomCustomerID = CustomerIDGenerator.Next(0, 999999999);
-            MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
+            MySqlConnection conn = new MySqlConnection("datasource=192.168.1.132;port=3306;username=root;password=;database=new_motapart;");
             conn.Open();
             MySqlCommand comm = conn.CreateCommand();
             comm.CommandText = "INSERT INTO stock(Barcode, Name, StockLevel, Supplier, Image, Price, WarningLevel, CostPrice) VALUES('" + ToInt(materialSingleLineTextField1.Text) + "','" + materialSingleLineTextField2.Text.ToString() + "','" + ToInt(materialSingleLineTextField3.Text) + "','" + materialSingleLineTextField4.Text.ToString() + "','" + imageToByte(SelectedImage) + "','" + materialSingleLineTextField6.Text.ToString() + "','" + ToInt(materialSingleLineTextField5.Text) + "','" + materialSingleLineTextField7.Text.ToString() + "')";

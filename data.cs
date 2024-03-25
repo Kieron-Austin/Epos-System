@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+
 namespace Motapart_Core
 {
     [StructLayout(LayoutKind.Sequential)]

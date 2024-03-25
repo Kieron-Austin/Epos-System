@@ -10,10 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.X509;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Configuration;
-using Google.Protobuf.Compiler;
 
 
 

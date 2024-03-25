@@ -21,23 +21,11 @@ namespace Motapart_Core
             {
                 try
                 {
-                    // Send the GET request to the URL and await the response
                     HttpResponseMessage response = await httpClient.GetAsync(url);
 
-                    // Check if the request was successful
                     if (response.IsSuccessStatusCode)
                     {
-                        // Read the content of the response as a byte array
                         byte[] responseData = await response.Content.ReadAsByteArrayAsync();
-
-                        // You can work with the data in the memory (responseData) here
-
-                        // Play the WAV file directly from memory
-                        //using (MemoryStream memoryStream = new MemoryStream(responseData))
-                        //{
-                        //  SoundPlayer player = new SoundPlayer(memoryStream);
-                        // player.PlaySync(); // Or player.Play() if you want to start the playback asynchronously
-                        //}
 
                         using (MemoryStream memoryStream = new MemoryStream(responseData))
                         {
@@ -54,12 +42,6 @@ namespace Motapart_Core
                                 }
                             }
                         }
-
-                        Console.WriteLine("Data played successfully.");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Error: The request was not successful. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)

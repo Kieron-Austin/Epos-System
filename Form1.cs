@@ -121,9 +121,7 @@ namespace Motapart_Core
                 {
                     lvi.Text = user.barcode.ToString();
                     lvi.SubItems.Add(user.name.ToString());
-                    // File.WriteAllBytes("Image.png", user.image);
                     pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-                   // picBoxView.SizeMode = PictureBoxSizeMode.AutoSize;
                     pictureBox1.Image = Image.FromFile(@"Images\\" + user.image.ToString());
                     lvi.SubItems.Add(user.stocklevel.ToString());
                     lvi.SubItems.Add(user.supplier.ToString());

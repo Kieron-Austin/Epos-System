@@ -15,7 +15,7 @@ namespace Motapart_Core
         {
 
             // Hello umändern
-            string url = "http://192.168.1.132:5002/api/tts?text=" + input;
+            string url = "http://localhost:5002/api/tts?text=" + input;
 
             using (HttpClient httpClient = new HttpClient())
             {

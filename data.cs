@@ -25,7 +25,7 @@ namespace Motapart_Core
         public string supplier;
         public string price;
         public string costprice;
-        public byte[] image;
+        public string image;
         public int warninglevel;
     }
 

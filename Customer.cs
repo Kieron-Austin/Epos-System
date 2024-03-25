@@ -42,7 +42,7 @@ namespace Motapart_Core
             materialListView1.Items.Clear();
 
             List<CustomerData> list = new List<CustomerData>();
-            MySqlConnection conn = new MySqlConnection("datasource=192.168.1.132;port=3306;username=root;password=new_motapart;");
+            MySqlConnection conn = new MySqlConnection("datasource=192.168.1.132;port=3306;username=root;password=;database=new_motapart;");
             conn.Open();
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM `customers`;", conn).ExecuteReader();
             try

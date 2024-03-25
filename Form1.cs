@@ -38,7 +38,7 @@ namespace Motapart_Core
             materialListView1.Items.Clear();
 
             List<StockData> list = new List<StockData>();
-            MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=new_motapart;");
+            MySqlConnection conn = new MySqlConnection("datasource=192.168.1.132;port=3306;username=root;password=;database=new_motapart;");
             conn.Open();
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM `stock`;", conn).ExecuteReader();
             try
@@ -82,9 +82,9 @@ namespace Motapart_Core
                         item.costprice = "";
 
                     if (!reader.IsDBNull(reader.GetOrdinal("Image")))
-                        item.image = (byte[])reader["Image"];
+                        item.image = (string)reader["Image"];
                     else
-                        item.image = item.image;
+                        item.image = "";
 
                     list.Add(item);
 
@@ -115,8 +115,6 @@ namespace Motapart_Core
             for (int i = 0; i < users.Count; i++)
             {
                 StockData user = users[i];
-                byte[] pData = user.image;
-                MemoryStream mem = new MemoryStream(user.image);
                 ListViewItem lvi = new ListViewItem();
 
                 if (materialSingleLineTextField1.Text == user.barcode.ToString())
@@ -124,9 +122,9 @@ namespace Motapart_Core
                     lvi.Text = user.barcode.ToString();
                     lvi.SubItems.Add(user.name.ToString());
                     // File.WriteAllBytes("Image.png", user.image);
-                    pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+                    pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                    // picBoxView.SizeMode = PictureBoxSizeMode.AutoSize;
-                    pictureBox1.Image = Image.FromStream(mem);
+                    pictureBox1.Image = Image.FromFile(@"Images\\" + user.image.ToString());
                     lvi.SubItems.Add(user.stocklevel.ToString());
                     lvi.SubItems.Add(user.supplier.ToString());
                     lvi.SubItems.Add("£" + user.price.ToString());
@@ -190,8 +188,6 @@ namespace Motapart_Core
             for (int i = 0; i < users.Count; i++)
             {
                 StockData user = users[i];
-                byte[] pData = user.image;
-                MemoryStream mem = new MemoryStream(user.image);
                 ListViewItem lvi = new ListViewItem();
 
                 lvi.Text = user.barcode.ToString();

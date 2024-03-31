@@ -123,20 +123,28 @@ namespace Motapart_Core
                     pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                     pictureBox1.Image = Image.FromFile(@"Images\\" + user.image.ToString());
 
-                    Text_To_Speech.SpeechToMe("Customer Found");
+                    Text_To_Speech.SpeechToMe(user.name.ToString() + " Selected");
+                }
+            }
+        }
+
+        private void input_KeyDown2(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrEmpty(tname.Text))
+                {
+
+                }
+                else
+                {
+                    listsearch();
                 }
             }
         }
         private void tname_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tname.Text))
-            {
-                Text_To_Speech.SpeechToMe("User Not Found");
-            }
-            else
-            {
-                listsearch();
-            }
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

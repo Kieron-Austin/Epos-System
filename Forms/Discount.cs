@@ -35,7 +35,7 @@ namespace Motapart_Core
             );
         }
         public static int New_Discounted_Price;
-        public static string Discounted_Price;
+        public static string Discount_Barcode;
         public static string Discount_Customer_ID;
         private List<CustomerData> RetreieveUsers()
         {
@@ -97,25 +97,48 @@ namespace Motapart_Core
                 CustomerData user = users[i];
                 ListViewItem lvi = new ListViewItem();
 
-                if (tname.Text == user.id.ToString())
+                if (textBox1.Text == user.id.ToString())
                 {
                     label1.Text = "Customer Name  -  " + user.name.ToString();
                     Discount_Customer_ID = user.name.ToString();
                     pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                     pictureBox2.Image = Image.FromFile(@"Images\\" + user.image.ToString());
+                    Text_To_Speech.SpeechToMe(user.name.ToString() + " Selected");
+                }
+            }
+        }
 
+        private void input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+
+                }
+                else
+                {
+                    CustomerSearch();
+                }
+            }
+        }
+        private void input_KeyDown2(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrEmpty(tname.Text))
+                {
+
+                }
+                else
+                {
+                    ItemSearch();
                 }
             }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tname.Text))
-            {
-            }
-            else
-            {
-                CustomerSearch();
-            }
+            
         }
 
         private List<StockData> RetreieveStock()
@@ -197,27 +220,18 @@ namespace Motapart_Core
                 {
                     pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                     pictureBox1.Image = Image.FromFile(@"Images\\" + user.image.ToString());
-
+                    Discount_Barcode = user.barcode.ToString();
+                    label8.Text = "Item Barcode  -   " + user.barcode.ToString();
                     label5.Text = "Item Cost Price  -   £" + user.costprice;
                     label6.Text = "Item Usual Sale Price  -   £" + user.price;
-
-                    New_Discounted_Price = Convert.ToInt32(user.costprice);
-                    Text_To_Speech.SpeechToMe("Item Found");
+                    tname.Clear();
+                    Text_To_Speech.SpeechToMe(user.name.ToString() + " Selected");
                 }
             }
         }
-
         private void tname_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tname.Text))
-            {
-
-                Text_To_Speech.SpeechToMe("Item Not Found");
-            }
-            else
-            {
-                ItemSearch();
-            }
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -275,20 +289,7 @@ namespace Motapart_Core
             }
             else
             {
-
-                double currentPrice = 0;
-                double deduct = 0;
-
-
-                currentPrice = Convert.ToDouble(New_Discounted_Price);
-                deduct = Convert.ToDouble(textBox2.Text.ToString());
-
-
-                currentPrice = currentPrice - deduct;
-
-                label8.Text = "Item Discounted Price   = £" + currentPrice.ToString();
-
-                Discounted_Price = currentPrice.ToString();
+;
             }
 
         }
@@ -301,11 +302,10 @@ namespace Motapart_Core
             MySqlConnection conn = new MySqlConnection("datasource=192.168.1.132;port=3306;username=root;password=;database=new_motapart;");
             conn.Open();
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO discount(Barcode, Customer_ID, Ammount) VALUES('" + ToInt(tname.Text) + "','" + Discount_Customer_ID.ToString() + "','" + Discounted_Price.ToString() +  "')";
+            comm.CommandText = "INSERT INTO discount(Barcode, Customer_ID, Price) VALUES('" + Discount_Barcode.ToString() + "','" + Discount_Customer_ID.ToString() + "','" + textBox2.Text.ToString() + "')";
             comm.ExecuteNonQuery();
             conn.Close();
-
-            //Discounted_Price
+            Text_To_Speech.SpeechToMe("Discount Of " + "£" + textBox2.Text.ToString() + "Applied");
         }
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {

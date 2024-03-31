@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tname = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.billNoTextBox = new System.Windows.Forms.TextBox();
-            this.tname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,56 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(921, 47);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 114);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 136);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label6.Size = new System.Drawing.Size(131, 13);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Customer Contact Number";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 112);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Customer Address";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Customer Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // tname
+            // 
+            this.tname.Location = new System.Drawing.Point(113, 44);
+            this.tname.Name = "tname";
+            this.tname.Size = new System.Drawing.Size(214, 20);
+            this.tname.TabIndex = 30;
+            this.tname.TextChanged += new System.EventHandler(this.tname_TextChanged);
+            this.tname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_KeyDown2);
             // 
             // dateTimePicker1
             // 
@@ -106,55 +156,6 @@
             this.billNoTextBox.Size = new System.Drawing.Size(167, 20);
             this.billNoTextBox.TabIndex = 1;
             this.billNoTextBox.TextChanged += new System.EventHandler(this.billNoTextBox_TextChanged);
-            // 
-            // tname
-            // 
-            this.tname.Location = new System.Drawing.Point(113, 44);
-            this.tname.Name = "tname";
-            this.tname.Size = new System.Drawing.Size(214, 20);
-            this.tname.TabIndex = 30;
-            this.tname.TextChanged += new System.EventHandler(this.tname_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Customer Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 112);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(92, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Customer Address";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 136);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(131, 13);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Customer Contact Number";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(921, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 114);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Sale
             // 

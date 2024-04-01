@@ -1,13 +1,16 @@
 # Epos-System
 Epos System
 
-
 Simple Epos system.
 
-I have noticed not many people do pure C# epos systems.
+--- Things Done --- 
 
+- Stock inventory with Barcode,Price,Cost Price,Supplier,Stock Warning Level,Stock Level & Image.
+- Customer manager Names,Address,Contact Number,Image.
+- AI Voice to sound prompts.
+- Discount system apply discount to any item per customer basis
 
-Sales part to come :)
+This epos system is an ongoing project to help those who stuggle with most EPOS/Inventory management systems.
 
 Support me?
 
@@ -17,6 +20,6 @@ Support me?
 
 
 
-  ![Inventory](https://github.com/Kieron-Austin/Epos-System/assets/46148281/d9d916f9-285f-4789-9a50-c72d88b1da4d)
+![Inventory](https://github.com/Kieron-Austin/Epos-System/assets/46148281/d9d916f9-285f-4789-9a50-c72d88b1da4d)
 ![Customers](https://github.com/Kieron-Austin/Epos-System/assets/46148281/dc7716cc-b7ee-479c-b69c-41097280aa6f)
 ![Main](https://github.com/Kieron-Austin/Epos-System/assets/46148281/e5d49f3c-4a3e-40ae-a6c5-1e4c2f3f2d7a)
